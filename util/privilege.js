@@ -3,11 +3,7 @@ function isPrivateChat(ctx) {
 }
 
 function isGroupChat(ctx) {
-  return ctx.chat.type == "group";
-}
-
-function isSupergroupChat(ctx) {
-  return ctx.chat.type == "supergroup";
+  return (ctx.chat.type == "group" || ctx.chat.type == "supergroup");
 }
 
 function isChannel(ctx) {
@@ -27,7 +23,6 @@ function isTagged(ctx) {
 module.exports = {
   isPrivateChat,
   isGroupChat,
-  isSupergroupChat,
   isChannel,
   isTagged,
 };
