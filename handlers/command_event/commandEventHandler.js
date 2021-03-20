@@ -37,12 +37,12 @@ module.exports = {
 
 function test(ctx) {
   // logger.debug(JSON.stringify(ctx.options.username));
-  ctx.reply(translate("dev_1", ));
+  ctx.reply(translate("got_you_command"));
 }
 
 function reply(ctx) {
   var chatId = ctx.message.from.id;
-  var msg = translate("dev_2", "default");
+  var msg = translate("got_you_command", "default");
   var messageId = ctx.message.message_id;
 
   ctx.telegram.sendMessage(chatId, msg, {
@@ -61,7 +61,7 @@ function forward(ctx) {
 function groupOnly(ctx) {
   if (isGroupChat(ctx)) {
     if (!isTagged(ctx)) {
-      ctx.reply(translate("dev_1"));
+      ctx.reply(translate("got_you_command"));
     } else {
       return;
     }
