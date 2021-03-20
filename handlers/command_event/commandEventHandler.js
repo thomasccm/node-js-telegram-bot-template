@@ -40,8 +40,9 @@ function test(ctx) {
   ctx.reply(translate("got_you_command"));
 }
 
+// command '/reply', reply your message
 function reply(ctx) {
-  var chatId = ctx.message.from.id;
+  var chatId = ctx.message.chat.id;
   var msg = translate("got_you_command", "default");
   var messageId = ctx.message.message_id;
 
@@ -50,17 +51,19 @@ function reply(ctx) {
   });
 }
 
+// command '/forward', forward the message you replied or just forward your message
 function forward(ctx) {
   var chatId = ctx.message.from.id;
-  var fromChatId = ctx.message.from.id;
-  var messageId = ctx.message.message_id;
+  var fromChatId = ctx.message.chat.id;
+  var messageId = ctx.message.reply_to_message ? ctx.message.reply_to_message.message_id : ctx.message.message_id;
 
   ctx.telegram.forwardMessage(chatId, fromChatId, messageId);
 }
 
+// command '/groupOnly', this command can only be used in group and with tagging of this bot
 function groupOnly(ctx) {
   if (isGroupChat(ctx)) {
-    if (!isTagged(ctx)) {
+    if (isTagged(ctx)) {
       ctx.reply(translate("got_you_command"));
     } else {
       return;
