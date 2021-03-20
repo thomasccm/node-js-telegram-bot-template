@@ -1,4 +1,5 @@
 {
-  "default": "default.js",
-  "en": "en.js"
+  "default": "en.js",
+  "en": "en.js",
+  "zh-Hant": "zh-Hant.js"
 }
