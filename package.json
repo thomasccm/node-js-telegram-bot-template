@@ -1,0 +1,21 @@
+{
+  "name": "node-js-telegram-bot-template",
+  "version": "1.0.0",
+  "description": "A barebones Node.js telegram bot using Telegraf",
+  "engines": {
+    "node": "12.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.37.0",
+    "telegraf-command-parts": "^1.0.3",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.4.2"
+  },
+  "license": "MIT"
+}
