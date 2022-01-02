@@ -1,16 +1,16 @@
 const root = process.cwd();
-const logger = require(`${root}/util/logger`)();
+const logger = require(`${root}/src/util/logger`)();
 const {
   isPrivateChat,
   isGroupChat,
   isTagged,
-} = require(`${root}/util/privilege`);
+} = require(`${root}/src/util/privilege`);
 const {
   CommandConstructor,
-} = require(`${root}/handlers/command_event/commandConstructor`);
+} = require(`${root}/src/handlers/command_event/commandConstructor`);
 const {
   translate,
-} = (languageHandler = require(`${root}/handlers/languageHandler`));
+} = (languageHandler = require(`${root}/src/handlers/languageHandler`));
 
 class CommandEventHandler {
   constructor(bot, botUsername) {
